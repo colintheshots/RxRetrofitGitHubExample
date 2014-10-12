@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Binder;
 import android.os.IBinder;
 import android.util.Log;
-import android.widget.Toast;
 
 import com.colintheshots.rxretrofitexample1.models.Gist;
 import com.colintheshots.rxretrofitexample1.models.GistDetail;
@@ -20,18 +19,30 @@ import rx.Observable;
 import rx.functions.Action1;
 import rx.schedulers.Schedulers;
 
-/** Provides access to GitHub REST API through a bound service
+/**
+ * Provides access to GitHub REST API through a bound service.
+ *
+ * While this service isn't necessary in this simple example,
+ * one may use a service to cache returned data and provide it
+ * to any activity.
+ *
  * Created by colin.lee on 10/10/14.
  */
 public class GitHubNetworkService extends Service {
 
+    /** The GitHub REST API Endpoint */
     public final static String GITHUB_BASE_URL = "https://api.github.com";
-    public final static String GITHUB_PERSONAL_ACCESS_TOKEN = "XXX"; // set me
+
+    /** Set this variable to your GitHub personal access token */
+    public final static String GITHUB_PERSONAL_ACCESS_TOKEN = "XXX";
 
     private GitHubClient mGitHubClient;
     private IBinder mBinder = new GitHubBinder();
     private GitHubCallback mCallback;
 
+    /**
+     * Retrofit interface to GitHub API methods
+     */
     public interface GitHubClient {
         @GET("/gists")
         Observable<List<Gist>> gists();
@@ -40,6 +51,9 @@ public class GitHubNetworkService extends Service {
         Observable<GistDetail> gist(@Path("id") String id);
     }
 
+    /**
+     * Callback interface to the activity
+     */
     public interface GitHubCallback {
         void displayGistList(final List<Gist> gists);
         void displayFileList(final GistDetail gistDetail);
@@ -73,10 +87,17 @@ public class GitHubNetworkService extends Service {
         }
     }
 
+    /**
+     * Sets the callback for binding the service to the current activity.
+     * @param c
+     */
     public void setCallback(GitHubCallback c) {
         mCallback = c;
     }
 
+    /**
+     * Unsets the callback when an activity goes away to allow garbage collection and prevent callbacks from firing.
+     */
     public void unsetCallback() {
         mCallback = null;
     }

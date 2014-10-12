@@ -7,8 +7,6 @@ import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.os.IBinder;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -68,26 +66,10 @@ public class MainActivity extends Activity
         }
     }
 
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
+    /**
+     * Callback from REST service to display the returned list of gist URLs
+     * @param gists
+     */
     @Override
     public void displayGistList(final List<Gist> gists) {
         if (gists.size()>0 && mListView!=null) {
@@ -101,6 +83,13 @@ public class MainActivity extends Activity
         }
     }
 
+    /**
+     * Callback from REST service to display the returned file contents.
+     *
+     * I reused the layout for both adapters only to make this example simpler.
+     *
+     * @param gistDetail
+     */
     @Override
     public void displayFileList(final GistDetail gistDetail) {
         if (gistDetail.getFiles().size()>0 && mListView!=null) {
@@ -113,6 +102,10 @@ public class MainActivity extends Activity
         }
     }
 
+    /**
+     * Butterknife-based click handler for clicks on the main ListView
+     * @param layout
+     */
     @OnItemClick(R.id.listView)
     public void pickItem(LinearLayout layout) {
         TextView tv = findById(layout, R.id.hiddenIdTextView);
