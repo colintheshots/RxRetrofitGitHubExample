@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pre-dex-items>
+
+    <item
+        dex="/Users/colin.lee/Projects/RxRetrofitExample1/app/build/intermediates/pre-dexed/debug/guava-18.0-4ce9624d912814f25d138956dba49969f0dd74f5.jar"
+        jar="/Users/colin.lee/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/18.0/cce0823396aa693798f8882e64213b1772032b09/guava-18.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="cce0823396aa693798f8882e64213b1772032b09"/>
+    <item
+        dex="/Users/colin.lee/Projects/RxRetrofitExample1/app/build/intermediates/pre-dexed/debug/retrofit-1.7.0-43cb762b7c31faf1d74170169d4ce13696dd8e17.jar"
+        jar="/Users/colin.lee/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit/retrofit/1.7.0/cc6807da6fdf91bea1b6a4a90c3818dac27d335f/retrofit-1.7.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="cc6807da6fdf91bea1b6a4a90c3818dac27d335f"/>
+    <item
+        dex="/Users/colin.lee/Projects/RxRetrofitExample1/app/build/intermediates/pre-dexed/debug/okhttp-urlconnection-2.0.0-b116ac81f0a2b84b9d103a0b167b0df14cab387a.jar"
+        jar="/Users/colin.lee/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp/okhttp-urlconnection/2.0.0/afe8399d352713b66e597e9670c741d1e60ae923/okhttp-urlconnection-2.0.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="afe8399d352713b66e597e9670c741d1e60ae923"/>
+    <item
+        dex="/Users/colin.lee/Projects/RxRetrofitExample1/app/build/intermediates/pre-dexed/debug/okio-1.0.0-689182f603520de24a67cce2fcea9dc72d2f9317.jar"
+        jar="/Users/colin.lee/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.0.0/2534c458682c73f5b9871131ab3098d3f987ca3/okio-1.0.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="02534c458682c73f5b9871131ab3098d3f987ca3"/>
+    <item
+        dex="/Users/colin.lee/Projects/RxRetrofitExample1/app/build/intermediates/pre-dexed/debug/gson-2.3-9cc002785fba96591f44256ffa20a846546eae44.jar"
+        jar="/Users/colin.lee/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.3/5fc52c41ef0239d1093a1eb7c3697036183677ce/gson-2.3.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="5fc52c41ef0239d1093a1eb7c3697036183677ce"/>
+    <item
+        dex="/Users/colin.lee/Projects/RxRetrofitExample1/app/build/intermediates/pre-dexed/debug/okhttp-2.0.0-9d7f14c44b2404e1d7942ad5d49231ee8ab7dfa4.jar"
+        jar="/Users/colin.lee/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp/okhttp/2.0.0/4c8d1536dba3812cc1592090dc20c47a4ed3c35e/okhttp-2.0.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="4c8d1536dba3812cc1592090dc20c47a4ed3c35e"/>
+    <item
+        dex="/Users/colin.lee/Projects/RxRetrofitExample1/app/build/intermediates/pre-dexed/debug/rxjava-1.0.0-rc.6-764717e63456dd022c060d61da0e6206f28ee596.jar"
+        jar="/Users/colin.lee/.gradle/caches/modules-2/files-2.1/io.reactivex/rxjava/1.0.0-rc.6/8f8f055568a389c3b170d81b713f60bbb5ad8bf9/rxjava-1.0.0-rc.6.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="8f8f055568a389c3b170d81b713f60bbb5ad8bf9"/>
+    <item
+        dex="/Users/colin.lee/Projects/RxRetrofitExample1/app/build/intermediates/pre-dexed/debug/butterknife-5.1.2-958508b3182a59caaad25581ff26266e3d60b278.jar"
+        jar="/Users/colin.lee/.gradle/caches/modules-2/files-2.1/com.jakewharton/butterknife/5.1.2/daf5472b0df6dabaceb6ad755b3812535863965a/butterknife-5.1.2.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="daf5472b0df6dabaceb6ad755b3812535863965a"/>
+
+</pre-dex-items>
