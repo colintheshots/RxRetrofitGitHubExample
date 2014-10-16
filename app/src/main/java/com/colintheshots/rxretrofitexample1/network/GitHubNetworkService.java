@@ -16,6 +16,7 @@ import retrofit.RestAdapter;
 import retrofit.http.GET;
 import retrofit.http.Path;
 import rx.Observable;
+import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
 import rx.schedulers.Schedulers;
 
@@ -106,7 +107,7 @@ public class GitHubNetworkService extends Service {
      * Calls the GitHub REST API to access the list of gists on your account and calls the callback method to display them
      */
     public void getGists() {
-        mGitHubClient.gists().observeOn(Schedulers.io()).subscribe(new Action1<List<Gist>>() {
+        mGitHubClient.gists().observeOn(AndroidSchedulers.mainThread()).subscribe(new Action1<List<Gist>>() {
             @Override
             public void call(List<Gist> gists) {
                 mCallback.displayGistList(gists);
@@ -124,7 +125,7 @@ public class GitHubNetworkService extends Service {
      * @param id
      */
     public void getGist(String id) {
-        mGitHubClient.gist(id).observeOn(Schedulers.io()).subscribe(new Action1<GistDetail>() {
+        mGitHubClient.gist(id).observeOn(AndroidSchedulers.mainThread()).subscribe(new Action1<GistDetail>() {
             @Override
             public void call(GistDetail gistDetail) {
                 mCallback.displayFileList(gistDetail);

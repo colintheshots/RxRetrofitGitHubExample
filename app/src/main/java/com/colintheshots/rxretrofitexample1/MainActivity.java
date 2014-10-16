@@ -73,13 +73,7 @@ public class MainActivity extends Activity
     @Override
     public void displayGistList(final List<Gist> gists) {
         if (gists.size()>0 && mListView!=null) {
-            runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    mListView.setAdapter(new GistAdapter(MainActivity.this, gists));
-                }
-            });
-
+            mListView.setAdapter(new GistAdapter(MainActivity.this, gists));
         }
     }
 
@@ -93,12 +87,7 @@ public class MainActivity extends Activity
     @Override
     public void displayFileList(final GistDetail gistDetail) {
         if (gistDetail.getFiles().size()>0 && mListView!=null) {
-            runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    mListView.setAdapter(new GistFilesAdapter(MainActivity.this, gistDetail));
-                }
-            });
+            mListView.setAdapter(new GistFilesAdapter(MainActivity.this, gistDetail));
         }
     }
 
