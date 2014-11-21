@@ -106,7 +106,7 @@ public class MainActivity extends Activity
             mService.getGist(gistName);
             mGistVisible = gistName;
 
-            displayHomeAsUp(true);
+            displayHomeAsUp(true); // just hacking everything together with a single activity for simplicity
         }
     }
 

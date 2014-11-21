@@ -35,7 +35,7 @@ public class GitHubNetworkService extends Service {
     public final static String GITHUB_BASE_URL = "https://api.github.com";
 
     /** Set this variable to your GitHub personal access token */
-    public final static String GITHUB_PERSONAL_ACCESS_TOKEN = "1de717a695fcb18b7ca91f75e8fc6f90353bb1e8";
+    public final static String GITHUB_PERSONAL_ACCESS_TOKEN = "XXX";
 
     private GitHubClient mGitHubClient;
     private IBinder mBinder = new GitHubBinder();
