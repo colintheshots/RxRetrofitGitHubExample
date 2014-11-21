@@ -21,11 +21,11 @@ import rx.functions.Action1;
 import rx.schedulers.Schedulers;
 
 /**
- * Provides access to GitHub REST API through a bound service.
+ * Provides access to GitHub REST API through a service.
  *
- * While this service isn't necessary in this simple example,
- * one may use a service to cache returned data and provide it
- * to any activity.
+ * While this service isn't necessary in this simple example
+ * and a bound service is a poor choice, one may use a service
+ * to cache returned data and provide it to any activity.
  *
  * Created by colin.lee on 10/10/14.
  */
@@ -35,7 +35,7 @@ public class GitHubNetworkService extends Service {
     public final static String GITHUB_BASE_URL = "https://api.github.com";
 
     /** Set this variable to your GitHub personal access token */
-    public final static String GITHUB_PERSONAL_ACCESS_TOKEN = "XXX";
+    public final static String GITHUB_PERSONAL_ACCESS_TOKEN = "1de717a695fcb18b7ca91f75e8fc6f90353bb1e8";
 
     private GitHubClient mGitHubClient;
     private IBinder mBinder = new GitHubBinder();

@@ -1,5 +1,6 @@
 package com.colintheshots.rxretrofitexample1;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Context;
@@ -7,6 +8,7 @@ import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.view.MenuItem;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -34,6 +36,7 @@ public class MainActivity extends Activity
 
     private GitHubNetworkService mService;
     private boolean mBound;
+    private String mGistVisible = "none";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,7 +102,11 @@ public class MainActivity extends Activity
     public void pickItem(LinearLayout layout) {
         TextView tv = findById(layout, R.id.hiddenIdTextView);
         if (tv!=null) {
-            mService.getGist(tv.getText().toString());
+            String gistName = tv.getText().toString();
+            mService.getGist(gistName);
+            mGistVisible = gistName;
+
+            displayHomeAsUp(true);
         }
     }
 
@@ -118,5 +125,34 @@ public class MainActivity extends Activity
     public void onServiceDisconnected(ComponentName componentName) {
         mService.unsetCallback();
         mService = null;
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (mGistVisible.equals("none")) {
+            super.onBackPressed();
+        } else {
+            mService.getGists();
+            mGistVisible = "none";
+
+            displayHomeAsUp(false);
+        }
+    }
+
+    void displayHomeAsUp(Boolean value) {
+        ActionBar actionBar = getActionBar();
+        if (actionBar!=null) {
+            actionBar.setDisplayHomeAsUpEnabled(value);
+        }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
